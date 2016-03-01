@@ -19,6 +19,7 @@ public class ContatoDao {
 
 	public ContatoDao() {
 		this.conn = new ConnectionFactory().getConnection();
+
 	}
 
 	public void insert(Contato contato) {
@@ -42,7 +43,7 @@ public class ContatoDao {
 
 	}
 	
-	public void update(Contato contato) {
+	public void update(Contato contato){
 		String sql = "UPDATE contatos SET "
 				+ "nome=?,email=?,endereco=?,dataNascimento=?"
 				+ " WHERE id=?";
@@ -55,6 +56,7 @@ public class ContatoDao {
 			stmt.setDate(4, new Date(contato.getDataNascimento()));
 			stmt.setLong(5, contato.getId());
 			stmt.execute();
+		
 			stmt.close();
 			
 			System.out.println("Contato atualizado!");

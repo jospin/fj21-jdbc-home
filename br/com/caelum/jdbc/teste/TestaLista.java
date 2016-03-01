@@ -2,6 +2,7 @@ package br.com.caelum.jdbc.teste;
 
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
